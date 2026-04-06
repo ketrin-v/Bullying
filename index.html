@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Educação Contra o Bullying | Conscientização e Acolhimento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+            background: #fefcf5;
+            color: #1e2f3b;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Fundo com textura suave e orgânica, sem blocos duros */
+        .wave-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(125deg, #fff9ef 0%, #f4ede1 100%);
+        }
+
+        /* Container principal fluido, sem bordas ou cards */
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2rem 1.8rem;
+        }
+
+        /* Cabeçalho com identidade acolhedora, sem caixas marcadas */
+        .hero {
+            text-align: center;
+            padding: 2rem 0 1.5rem 0;
+            margin-bottom: 1.8rem;
+            border-bottom: 2px solid rgba(241, 147, 84, 0.25);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #bf4e2c, #2a6f8f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            color: #4a6272;
+            max-width: 680px;
+            margin: 0.75rem auto 0;
+            font-weight: 450;
+        }
+
+        .hero .sub {
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            background: #ffe5d0;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            color: #b64926;
+            font-weight: 500;
+        }
+
+        /* Seções com fluxo contínuo, sem quadros — apenas texto e elementos leves */
+        .section {
+            margin: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #2c5f7a;
+            letter-spacing: -0.3px;
+            border-left: 5px solid #f3a683;
+            padding-left: 1rem;
+        }
+
+        .text-block {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e40;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #f9e7c2 0%, #f9e7c2 40%, transparent 80%);
+            padding: 0 0.2rem;
+            font-weight: 500;
+            border-radius: 8px;
+        }
+
+        /* Lista de tipos de bullying: sem quadros, apenas ícones e texto em linha */
+        .tipos-lista {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .tipo-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed #e2cfb3;
+        }
+
+        .tipo-emoji {
+            font-size: 2rem;
+            min-width: 55px;
+            text-align: center;
+        }
+
+        .tipo-desc h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #bc6c3c;
+            margin-bottom: 0.2rem;
+        }
+
+        .tipo-desc p {
+            color: #3b5c6e;
+        }
+
+        /* Banner de alerta integrado ao fluxo textual */
+        .alert-textual {
+            background: #fff2e2;
+            padding: 1.6rem 2rem;
+            border-radius: 3rem;
+            margin: 2.5rem 0;
+            text-align: center;
+            font-size: 1.15rem;
+            border-left: 8px solid #e67e22;
+            border-right: 1px solid #ffddb0;
+            font-weight: 500;
+        }
+
+        .alert-textual strong {
+            color: #c24a1a;
+        }
+
+        .btn-compromisso {
+            background: none;
+            border: 2px solid #c4683a;
+            color: #c4683a;
+            padding: 0.5rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn-compromisso:hover {
+            background: #c4683a;
+            color: white;
+            border-color: #c4683a;
+        }
+
+        /* Citação poética / depoimento */
+        .citacao {
+            font-style: italic;
+            font-size: 1.25rem;
+            background: #f6f0e8;
+            padding: 1.8rem 2rem;
+            border-radius: 60px 20px 60px 20px;
+            margin: 2rem 0;
+            color: #2b5f74;
+            font-weight: 450;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .citacao-autor {
+            margin-top: 0.8rem;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 0.9rem;
+            color: #a15c38;
+        }
+
+        /* Etapas de ação (design em cascata, sem quadros) */
+        .etapas-caminho {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 2rem 0 1rem;
+            justify-content: space-between;
+        }
+
+        .etapa-passo {
+            flex: 1;
+            min-width: 150px;
+            background: rgba(255, 245, 235, 0.7);
+            padding: 1rem 1rem;
+            border-radius: 2rem;
+            text-align: center;
+            backdrop-filter: blur(2px);
+        }
+
+        .etapa-num {
+            font-weight: 800;
+            font-size: 1.7rem;
+            color: #e28c5c;
+            line-height: 1;
+        }
+
+        /* Formulário de apoio (estilo minimalista e informativo) */
+        .form-ajuda {
+            margin: 3rem 0;
+            background: #fffaf3;
+            padding: 1.8rem;
+            border-radius: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.4rem;
+            color: #2c5f7a;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: white;
+            border: 1px solid #eedbc8;
+            border-radius: 1.5rem;
+            font-family: inherit;
+            transition: 0.2s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #e28c5c;
+            box-shadow: 0 0 0 2px rgba(226, 140, 92, 0.2);
+        }
+
+        .btn-enviar {
+            background: #2c6e8f;
+            border: none;
+            color: white;
+            padding: 0.7rem 2rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+
+        .btn-enviar:hover {
+            background: #1d4f6e;
+        }
+
+        .feedback {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #2c7840;
+        }
+
+        /* Seção de dados e números (texto corrido) */
+        .dado-destaque {
+            background: #ecf3f0;
+            padding: 1.2rem 2rem;
+            border-radius: 3rem;
+            margin: 2rem 0;
+            font-size: 1rem;
+            text-align: center;
+            border: 1px solid #d9e0db;
+        }
+
+        .numero-grande {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #b85c34;
+            display: inline-block;
+            margin-right: 0.3rem;
+        }
+
+        /* Rodapé suave */
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eedbc8;
+            font-size: 0.85rem;
+            color: #6f8f9c;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .etapas-caminho {
+                flex-direction: column;
+            }
+            .tipo-row {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="wave-bg"></div>
+<div class="container">
+
+    <!-- Cabeçalho sem quadros, apenas tipografia -->
+    <div class="hero">
+        <h1>Bullying: silêncio machuca,<br> informação transforma.</h1>
+        <div class="tagline">Uma página de conscientização baseada em acolhimento, dados e respeito. Conhecer é o primeiro passo para uma cultura de paz.</div>
+        <div class="sub">📘 Material de apoio | Escola sem violência</div>
+    </div>
+
+    <!-- O que é bullying? Narrativa contínua -->
+    <div class="section">
+        <div class="section-title">🧠 O que é bullying, afinal?</div>
+        <div class="text-block">
+            Bullying é qualquer forma de violência <span class="highlight">intencional e repetitiva</span> que ocorre em relações de desequilíbrio de poder. Pode ser física, verbal, psicológica ou virtual. 
+            Não é “brincadeira” quando causa dor, humilhação ou isolamento. O bullying fere a dignidade e deixa marcas profundas.
+        </div>
+        <div class="text-block">
+            Segundo especialistas, o comportamento agressivo sistemático prejudica tanto quem sofre quanto quem pratica e quem observa. A boa notícia: <strong>a prevenção e a intervenção funcionam</strong> quando toda a comunidade escolar se envolve.
+        </div>
+    </div>
+
+    <!-- Tipos de bullying: formato de lista orgânica sem quadros -->
+    <div class="section">
+        <div class="section-title">🔎 Manifestações do bullying (conheça para identificar)</div>
+        <div class="tipos-lista">
+            <div class="tipo-row"><div class="tipo-emoji">👊</div><div class="tipo-desc"><h4>Físico</h4><p>Empurrões, socos, chutes, danos a pertences — formas explícitas de agressão.</p></div></div>
+            <div class="tipo-row"><div class="tipo-emoji">🗣️</div><div class="tipo-desc"><h4>Verbal</h4><p>Xingamentos, apelidos humilhantes, insultos constantes relacionados à aparência ou origem.</p></div></div>
+            <div class="tipo-row"><div class="tipo-emoji">👥</div><div class="tipo-desc"><h4>Social / Psicológico</h4><p>Exclusão proposital, espalhar boatos, ignorar a pessoa, isolamento em grupo.</p></div></div>
+            <div class="tipo-row"><div class="tipo-emoji">📱</div><div class="tipo-desc"><h4>Ciberbullying</h4><p>Ofensas em redes sociais, criação de perfis falsos, exposição íntima e compartilhamento de mentiras online.</p></div></div>
+            <div class="tipo-row"><div class="tipo-emoji">💔</div><div class="tipo-desc"><h4>Preconceituoso & Sexual</h4><p>Discriminação por raça, gênero, religião, orientação sexual ou deficiência, além de comentários e gestos de conotação sexual abusiva.</p></div></div>
+        </div>
+        <div class="text-block" style="margin-top: 1rem;">
+            ✨ <strong>Importante:</strong> o bullying se caracteriza pela repetição e intencionalidade. Conflitos pontuais não são bullying, mas merecem mediação. O que define é o padrão de crueldade continuada.
+        </div>
+    </div>
+
+    <!-- Banner de ação / consciência -->
+    <div class="alert-textual">
+        🚨 <strong>Você testemunhou ou sofre bullying?</strong> Não normalize a violência. Peça ajuda a um professor, coordenador, familiares ou ligue para o <strong>Disque 100</strong> (Direitos Humanos). O acolhimento salva vidas.
+        <div><button class="btn-compromisso" id="btnCompromisso">✊ Eu me comprometo a não ficar em silêncio</button></div>
+    </div>
+
+    <!-- Dados comoventes e estatísticas (formato fluido) -->
+    <div class="dado-destaque">
+        <span class="numero-grande">1 em cada 5</span> estudantes brasileiros já sofreu bullying segundo pesquisa do IBGE (2019).<br>
+        Em ambientes onde há <strong>intervenção clara e diálogo</strong>, os casos diminuem até <strong class="numero-grande" style="font-size:1.7rem;">70%</strong>.
+    </div>
+
+    <!-- Citação poderosa -->
+    <div class="citacao">
+        “O bullying não é um rito de passagem. É uma violência que pode ser interrompida com coragem, informação e empatia.”
+        <div class="citacao-autor">— Programa Escola sem Bullying (material didático)</div>
+    </div>
+
+    <!-- Protocolo de ação sem quadros, apenas passos -->
+    <div class="section">
+        <div class="section-title">🤝 Como agir diante do bullying (para alunos, famílias e escolas)</div>
+        <div class="etapas-caminho">
+            <div class="etapa-passo"><div class="etapa-num">1</div><strong>Ouça com acolhimento</strong><br>Dê voz à vítima, acredite nela sem julgamento.</div>
+            <div class="etapa-passo"><div class="etapa-num">2</div><strong>Registre e comunique</strong><br>Informe a escola ou responsáveis por escrito.</div>
+            <div class="etapa-passo"><div class="etapa-num">3</div><strong>Intervenção educativa</strong><br>Medidas restaurativas, não punitivismo isolado.</div>
+            <div class="etapa-passo"><div class="etapa-num">4</div><strong>Acompanhamento psicológico</strong><br>Apoio à vítima e trabalho com agressor.</div>
+            <div class="etapa-passo"><div class="etapa-num">5</div><strong>Cultura de paz contínua</strong><br>Rodas de conversa, empatia e projetos antibullying.</div>
+        </div>
+    </div>
+
+    <!-- Reflexão sobre ciberbullying -->
+    <div class="section">
+        <div class="section-title">💻 Ciberbullying: a violência que atravessa a tela</div>
+        <div class="text-block">
+            Mensagens ofensivas, exposição de fotos sem consentimento, ameaças em grupos e exclusão digital. Ao contrário do que se pensa, o ciberbullying é ainda mais perigoso porque alcança a vítima 24 horas por dia, dentro de sua própria casa.
+            <span class="highlight">Salve prints, bloqueie agressores e denuncie nas plataformas.</span> Nunca revide com violência virtual: busque ajuda de adultos responsáveis.
+        </div>
+    </div>
+
+    <!-- Formulário de apoio (simulação educativa com acolhimento) -->
+    <div class="form-ajuda">
+        <h3 style="font-size: 1.6rem; margin-bottom: 1rem; color: #bc6c3c;">📢 Fale com a gente — canal de conscientização</h3>
+        <p style="margin-bottom: 1rem;">Este é um espaço de <strong>simulação didática</strong> para mostrar que o pedido de ajuda é o primeiro passo. Em situações reais, procure um adulto de confiança ou o Disque 100.</p>
+        <form id="formApoio">
+            <div class="form-group">
+                <label>Como gostaria de ser chamado(a)? (opcional)</label>
+                <input type="text" id="nome" placeholder="Ex: Ana, ou prefiro anônimo">
+            </div>
+            <div class="form-group">
+                <label>Sua mensagem de apoio, dúvida ou relato (simulação educativa)</label>
+                <textarea rows="3" id="mensagem" placeholder="Compartilhe aqui sua reflexão, pergunta ou como podemos ajudar na conscientização..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Você é:</label>
+                <select id="papel">
+                    <option value="estudante">Estudante</option>
+                    <option value="professor">Professor(a) ou funcionário(a)</option>
+                    <option value="familia">Familiar/responsável</option>
+                    <option value="interessado">Interessado no tema</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-enviar">Enviar mensagem de acolhimento 🌱</button>
+            <div id="formFeedback" class="feedback"></div>
+        </form>
+        <p style="font-size: 0.75rem; margin-top: 1rem; color: #6b8c9e;">🔒 Ambiente de conscientização: nenhum dado é armazenado. Para urgências, disque 100 ou procure o Conselho Tutelar.</p>
+    </div>
+
+    <!-- Seção final: onde buscar ajuda real -->
+    <div class="section">
+        <div class="section-title">📍 Canais oficiais de ajuda (informação essencial)</div>
+        <div class="text-block">
+            • <strong>Disque 100</strong> — Direitos Humanos (recebe denúncias de violência contra crianças e adolescentes).<br>
+            • <strong>Centro de Valorização da Vida (CVV)</strong> — 188 (apoio emocional 24h).<br>
+            • <strong>Conselho Tutelar</strong> — em todas as cidades, protege direitos de crianças e jovens.<br>
+            • <strong>Escola e rede de apoio</strong> — converse com professores, psicólogos escolares e direção.
+        </div>
+        <div class="text-block" style="margin-top: 1rem;">
+            Lembre-se: o bullying não é inevitável. Escolas que implementam programas socioemocionais e protocolos de combate ao bullying criam ambientes mais seguros para todos.
+        </div>
+    </div>
+
+    <footer>
+        <p>📚 Baseado em diretrizes do "Programa Escola sem Bullying" e em materiais do MEC, Unicef e Instituto de Psicologia. Informação e empatia transformam realidades.</p>
+        <p style="margin-top: 0.5rem;">💙 Respeito é a base. Compartilhe conhecimento, rompa o silêncio.</p>
+    </footer>
+</div>
+
+<script>
+    // Botão de compromisso interativo
+    const compromissoBtn = document.getElementById('btnCompromisso');
+    if (compromissoBtn) {
+        compromissoBtn.addEventListener('click', () => {
+            alert('🌟 Obrigado pelo seu compromisso! Você é parte da mudança: denunciar, acolher e educar são atitudes que salvam vidas. Compartilhe essa ideia! 🌟');
+        });
+    }
+
+    // Formulário de simulação educativa com feedback acolhedor
+    const form = document.getElementById('formApoio');
+    const feedbackDiv = document.getElementById('formFeedback');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nome = document.getElementById('nome').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+        const papel = document.getElementById('papel').value;
+
+        if (!mensagem) {
+            feedbackDiv.innerHTML = '❌ Escreva uma mensagem para que possamos simular um retorno acolhedor. Sua voz importa!';
+            feedbackDiv.style.color = '#b33b2c';
+            return;
+        }
+
+        let papelText = '';
+        if (papel === 'estudante') papelText = 'estudante';
+        else if (papel === 'professor') papelText = 'educador(a)';
+        else if (papel === 'familia') papelText = 'familiar/responsável';
+        else papelText = 'pessoa interessada';
+
+        const nomeExibido = nome ? nome : 'querido(a) amigo(a)';
+
+        feedbackDiv.innerHTML = `✅ Mensagem enviada, ${nomeExibido}! 🙌<br>
+        Como ${papelText}, sua participação fortalece a conscientização. Em um caso real, um conselheiro ou profissional entraria em contato.<br>
+        🧡 Lembre: Você não está sozinho(a). Procure ajuda imediata se estiver em situação de bullying: Disque 100 ou converse com um adulto de confiança.<br>
+        <em>“A coragem de pedir ajuda é o primeiro passo para a cura.”</em>`;
+        feedbackDiv.style.color = '#2a6b47';
+        
+        // limpar campos (somente mensagem e nome mantém propósito didático)
+        document.getElementById('nome').value = '';
+        document.getElementById('mensagem').value = '';
+        
+        setTimeout(() => {
+            // após 10 segundos o feedback não desaparece abruptamente, mas mantém a mensagem positiva
+        }, 100);
+    });
+</script>
+</body>
+</html>
